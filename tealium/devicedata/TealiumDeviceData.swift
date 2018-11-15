@@ -160,7 +160,7 @@ public class TealiumDeviceData: TealiumDeviceDataCollection {
         }
 
         let data = hostInfo.move()
-        hostInfo.deallocate()
+        hostInfo.deallocate(capacity: 1)
 
         let free = Double(data.free_count) * Double(pageSize)
             / Unit.megabyte.rawValue
